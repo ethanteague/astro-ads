@@ -5,7 +5,8 @@ var gulp = require('gulp'),
   autoprefixer = require('gulp-autoprefixer'),
   concat = require('gulp-concat'),
   rename = require('gulp-rename'),
-  browserSync = require('browser-sync').create();
+  browserSync = require('browser-sync').create(),
+  reload = browserSync.reload;
 
 var jsSources = ['assets/scripts/*.js'],
   sassSources = ['assets/styles/*.scss'],
@@ -34,8 +35,8 @@ gulp.task('js', function () {
 gulp.task('browser-sync', function () {
   var files = [
     '*.html',
-    'dist/assets/styles.min.css',
-    'dist/assets/script.min.js'
+    'dist/assets/*.min.js',
+    'dist/assets/*.min.css',
   ];
 
   browserSync.init(files, {
@@ -43,6 +44,7 @@ gulp.task('browser-sync', function () {
       baseDir: './'
     }
   });
+  gulp.watch('*.html').on('change', reload);
 });
 
 gulp.task('default', ['browser-sync'], function () {
