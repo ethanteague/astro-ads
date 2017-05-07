@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-sass": "latest",
+    "gulp-uglify": "latest",
+    "gulp-minify-css": "latest",
+    "gulp-concat": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-rename": "latest",
+    "browser-sync": "latest"
+  }
+}
