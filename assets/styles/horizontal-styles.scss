@@ -1,18 +1,26 @@
-body {
-  background: white;
-}
+$break: "min-width: 700px";
 
 .astro-ads-container-wrap {
   width: 100%;
   font-family: Tahoma, Verdana, Segoe, sans-serif;
   color: #585656;
   height: 120px;
-
+  a,
+  a:visited {
+    color: white;
+    text-decoration: none;
+  }
   .astro-ads-container {
-    width: 33%;
-    height: 100%;
-    float: left;
-    display: inline;
+    height: 200%;
+    display: block;
+    border-bottom: dashed 1px #ccc;
+    @media ($break) {
+      height: 100%;
+      width: 33%;
+      float: left;
+      display: inline;
+      border-bottom: none;
+    }
   }
 
   .astro-ads-container-tag-collection {
@@ -31,6 +39,10 @@ body {
   .astro-ads-container-tag-header {
     margin-top: 0;
     margin-bottom: 10px;
+    text-align: center;
+    @media ($break) {
+      text-align: left;
+    }
   }
 
   .astro-ads-container-tag-strikethrough {
@@ -38,25 +50,34 @@ body {
   }
 
   .astro-ads-container-tag-left {
-    float: left;
     display: block;
-    position: relative;
-    width: 25%;
-    border-right: thin dotted #dfdfdf;
-    padding-right: 5px;
-    height: 80%;
-    margin-right: 5px;
-    background-image: url(http://cdn.shopify.com/s/files/1/1645/2515/products/54db707b1fce1138fb26af6d736082d5_200x.jpg);
+    clear: both;
+    width: 100%;
+    height: 50%;
+    background-size: contain;
+    background-position: top center;
+    background-image: url("http://cdn.shopify.com/s/files/1/1645/2515/products/54db707b1fce1138fb26af6d736082d5_200x.jpg");
     background-repeat: no-repeat;
-    background-size: 150%;
-    background-position: -20px -20px;
+    @media ($break) {
+      float: left;
+      width: 25%;
+      border-right: thin dotted #dfdfdf;
+      padding-right: 5px;
+      height: 80%;
+      margin-right: 5px;
+      background-size: 150%;
+      background-position: -20px -20px;
+    }
   }
 
   .astro-ads-container2 {
     .astro-ads-container-tag-left {
-      background-size:80%;
       background-image: url("http://cdn.shopify.com/s/files/1/1645/2515/products/33914-7-L_120x.jpg");
-      background-position: 10px 0px;
+      background-repeat: no-repeat;
+      @media ($break) {
+        background-size: 80%;
+        background-position: 10px 0px;
+      }
     }
   }
 
@@ -66,18 +87,38 @@ body {
     }
   }
 
-  .astro-ads-container-tag-right {
-    float: left;
-    display: block;
-    width: 60%;
-    span {
-      display: block;
-      clear: both;
+  .astro-ads-container-second {
+    .astro-ads-container-tag-left {
+      background-size: contain;
+      background-position: center;
+      background-image: url("http://cdn.shopify.com/s/files/1/1645/2515/products/1024x1024m-white-LJCcId6eqbH1BzbjxNln4IuX7Wf48erm_adj_200x.jpg");
+    }
+    &.astro-ads-container2 {
+      .astro-ads-container-tag-left {
+        background-image: url("http://cdn.shopify.com/s/files/1/1645/2515/products/1024x1024m-white-tq_200x.jpg");
+      }
+    }
+    &.astro-ads-container3 {
+      .astro-ads-container-tag-left {
+        background-image: url("http://cdn.shopify.com/s/files/1/1645/2515/products/1024x1024m-white-AlsBqXU9UJfcc0X608WAg93UqUFyyMkL_adj_200x.jpg");
+      }
     }
   }
 
   .astro-ads-container-tag-right {
     font-size: 16px;
+    display: block;
+    float: left;
+    width: 100%;
+    clear: none;
+    span {
+      display: block;
+      clear: both;
+    }
+    @media ($break) {
+      float: left;
+      width: 60%;
+    }
   }
 
   .astro-ads-container-tag-right-inline {
@@ -88,7 +129,6 @@ body {
     background-color: #004A7F;
     color: #FFFFFF;
     cursor: pointer;
-    display: inline-block;
     font-size: 16px;
     padding: 5px;
     text-align: center;
@@ -103,6 +143,9 @@ body {
     z-index: 2;
     width: 25%;
     margin: 0 auto;
+    @media ($break) {
+
+    }
   }
 
   @keyframes glowing {
@@ -115,7 +158,7 @@ body {
       box-shadow: 0 0 20px #71ae3f;
     }
     100% {
-      background-color: 64 a254;
+      background-color: #64a254;
       box-shadow: 0 0 3px #71ae3f;
     }
   }
