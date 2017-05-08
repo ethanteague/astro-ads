@@ -1,16 +1,18 @@
 $break: "min-width: 700px";
 
 .astro-ads-container-wrap {
+  background: white;
   width: 100%;
   font-family: Tahoma, Verdana, Segoe, sans-serif;
   color: #585656;
-  height: 120px;
+  height: 150px;
   a,
   a:visited {
     color: white;
     text-decoration: none;
   }
   .astro-ads-container {
+    background:white;
     height: 200%;
     display: block;
     border-bottom: dashed 1px #ccc;
